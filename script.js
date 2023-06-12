@@ -9,4 +9,3 @@ function getComputerChoice(){
     return compChoice;
 }
 
-console.log(getComputerChoice());
