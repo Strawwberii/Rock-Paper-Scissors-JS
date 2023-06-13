@@ -1,5 +1,10 @@
 //variables
 let choices = ['rock', 'paper', 'scissors'];
+let playerSelection = '';
+let computerSelection = '';
+let result;
+let computerPts = 0;;
+let playerPts = 0;
 
 //get computer's choice
 
@@ -11,17 +16,51 @@ function getComputerChoice(){
 
 // checking who wins each round (playRound function)
 
-playRound(playerSelection, computerSelection){
+function playRound(playerSelection, computerSelection){
 
     if(playerSelection === computerSelection){
-        return "draw";
+        result = "draw";
     }
     else if(
         (playerSelection === 'rock' && computerSelection === 'scissors')||
         (playerSelection === 'paper' && computerSelection === 'rock') ||
         (playerSelection === 'scissors' && computerSelection === 'paper')
     ){
-        return "you win";
+        result = "you win";
+        playerPts++;
     }
-    else return "computer wins";
+    else if (
+        (computerSelection === 'rock' && playerSelection === 'scissors')||
+        (computerSelection === 'paper' && playerSelection === 'rock') ||
+        (computerSelection === 'scissors' && playerSelection === 'paper')
+    ){
+        result = "computer wins";
+        computerPts++;
+    }
+    
+
+    return result;
 }
+
+
+function game(){
+
+    for(let i=0;i<5;i++){
+
+        // get player's choice
+        computerSelection = getComputerChoice();
+        playerSelection = prompt("Enter your choice");
+
+        playRound(playerSelection, computerSelection )
+        
+    }
+    if(playerPts>computerPts){
+        console.log("you win!");
+    }
+    else console.log("computer wins!");
+
+    console.log(playerPts);
+    console.log(computerPts);
+}
+
+game();
