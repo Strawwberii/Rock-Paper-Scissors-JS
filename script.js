@@ -45,15 +45,13 @@ function playRound(playerSelection, computerSelection){
 
 function game(){
 
-    for(let i=0;i<5;i++){
-
         // get player's choice
         computerSelection = getComputerChoice();
         playerSelection = prompt("Enter your choice");
 
         playRound(playerSelection, computerSelection )
         
-    }
+    
     if(playerPts>computerPts){
         console.log("you win!");
     }
