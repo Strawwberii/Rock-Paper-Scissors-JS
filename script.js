@@ -5,6 +5,10 @@ let computerSelection = '';
 let result;
 let computerPts = 0;;
 let playerPts = 0;
+let buttons = document.querySelectorAll('#buttons');
+let rockBtn = document.querySelector('#rockbtn');
+let paperBtn = document.querySelector('#paperbtn');
+let scissosBtn = document.querySelector('scissorsbtn')
 
 //get computer's choice
 
@@ -45,13 +49,21 @@ function playRound(playerSelection, computerSelection){
 
 function game(){
 
-        // get player's choice
+        // get computer's choice
         computerSelection = getComputerChoice();
-        playerSelection = prompt("Enter your choice");
 
-        playRound(playerSelection, computerSelection )
+        //get player's choice
         
-    
+        rockBtn.addEventListener('click', function() {
+            playRound('rock', computerSelection);
+        });
+        paperBtn.addEventListener('click', function() {
+            playRound('paper', computerSelection);
+        });
+        scissorsBtn.addEventListener('click', function() {
+            playRound('scissors', computerSelection);
+        });
+
     if(playerPts>computerPts){
         console.log("you win!");
     }
