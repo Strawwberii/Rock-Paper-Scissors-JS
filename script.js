@@ -5,14 +5,14 @@ let computerSelection = '';
 let result;
 let computerPts = 0;;
 let playerPts = 0;
-let buttons = document.querySelectorAll('#buttons');
+let buttons = document.querySelectorAll('.btn');
 let rockBtn = document.querySelector('#rockbtn');
 let paperBtn = document.querySelector('#paperbtn');
 let scissorsBtn = document.querySelector('#scissorsbtn');
 let playerScore = document.querySelector('#playerScore');
 let computerScore = document.querySelector('#computerScore');
 
-//get computer's choice
+//generate computer's choice
 
 function getComputerChoice(){
 
@@ -20,9 +20,19 @@ function getComputerChoice(){
     return compChoice;
 }
 
-// checking who wins each round (playRound function)
+// disable buttons function
+
+function disableButtons(){
+
+    buttons.forEach(elem => {
+        elem.disabled = true
+    });
+}
+// (playRound function)
 
 function playRound(playerSelection, computerSelection){
+
+    // checking who wins each round
 
     if(playerSelection === computerSelection){
         result = "draw since you chose " + playerSelection + " and computer chose " + computerSelection ;
@@ -44,9 +54,23 @@ function playRound(playerSelection, computerSelection){
         computerPts++;
     }
     
+    // checking who wins the game (first to 5 pts wins)
+
+    if(computerPts == 5){
+        result = "computer wins the game!";
+        disableButtons();
+        
+    }
+    else if (playerPts == 5){
+        result = "you win the game!";
+        disableButtons();
+        
+    }
+    // showing result on the screen
+
     let roundResult = document.getElementById("roundResult");
     roundResult.textContent = result;
-    
+
     return result;
 }
 
@@ -74,13 +98,7 @@ function game(){
             computerScore.textContent = computerPts;
         });
 
-    if(playerPts>computerPts){
-        console.log("you win!");
-    }
-    else console.log("computer wins!");
 
-    console.log(playerPts);
-    console.log(computerPts);
 }
-
 game();
+
