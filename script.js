@@ -59,11 +59,12 @@ function playRound(playerSelection, computerSelection){
     if(computerPts == 5){
         result = "computer wins the game!";
         disableButtons();
-        
+        restart();
     }
     else if (playerPts == 5){
         result = "you win the game!";
         disableButtons();
+        restart();
         
     }
     // showing result on the screen
@@ -102,3 +103,7 @@ function game(){
 }
 game();
 
+// telling user how to reset the game
+function restart(){
+   return document.getElementById('resetGame').textContent = "Reload the page to restart the game!";
+}
