@@ -8,7 +8,9 @@ let playerPts = 0;
 let buttons = document.querySelectorAll('#buttons');
 let rockBtn = document.querySelector('#rockbtn');
 let paperBtn = document.querySelector('#paperbtn');
-let scissosBtn = document.querySelector('scissorsbtn')
+let scissorsBtn = document.querySelector('#scissorsbtn');
+let playerScore = document.querySelector('#playerScore');
+let computerScore = document.querySelector('#computerScore');
 
 //get computer's choice
 
@@ -42,7 +44,9 @@ function playRound(playerSelection, computerSelection){
         computerPts++;
     }
     
-
+    let roundResult = document.getElementById("roundResult");
+    roundResult.textContent = result;
+    
     return result;
 }
 
@@ -52,16 +56,22 @@ function game(){
         // get computer's choice
         computerSelection = getComputerChoice();
 
-        //get player's choice
+        //get player's choice and run playRound function
         
         rockBtn.addEventListener('click', function() {
             playRound('rock', computerSelection);
+            playerScore.textContent = playerPts;
+            computerScore.textContent = computerPts;
         });
         paperBtn.addEventListener('click', function() {
             playRound('paper', computerSelection);
+            playerScore.textContent = playerPts;
+            computerScore.textContent = computerPts;
         });
         scissorsBtn.addEventListener('click', function() {
             playRound('scissors', computerSelection);
+            playerScore.textContent = playerPts;
+            computerScore.textContent = computerPts;
         });
 
     if(playerPts>computerPts){
