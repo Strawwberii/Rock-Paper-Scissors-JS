@@ -30,8 +30,9 @@ function disableButtons(){
 }
 // (playRound function)
 
-function playRound(playerSelection, computerSelection){
+function playRound(playerSelection){
 
+    computerSelection = getComputerChoice();
     // checking who wins each round
 
     if(playerSelection === computerSelection){
@@ -75,12 +76,6 @@ function playRound(playerSelection, computerSelection){
     return result;
 }
 
-
-function game(){
-
-        // get computer's choice
-        computerSelection = getComputerChoice();
-
         //get player's choice and run playRound function
         
         rockBtn.addEventListener('click', function() {
@@ -98,10 +93,10 @@ function game(){
             playerScore.textContent = playerPts;
             computerScore.textContent = computerPts;
         });
+        
 
 
-}
-game();
+
 
 // telling user how to reset the game
 function restart(){
