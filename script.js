@@ -25,14 +25,14 @@ function getComputerChoice(){
 function playRound(playerSelection, computerSelection){
 
     if(playerSelection === computerSelection){
-        result = "draw";
+        result = "draw since you chose " + playerSelection + " and computer chose " + computerSelection ;
     }
     else if(
         (playerSelection === 'rock' && computerSelection === 'scissors')||
         (playerSelection === 'paper' && computerSelection === 'rock') ||
         (playerSelection === 'scissors' && computerSelection === 'paper')
     ){
-        result = "you win";
+        result = "you win this round as computer chose " + computerSelection;
         playerPts++;
     }
     else if (
@@ -40,7 +40,7 @@ function playRound(playerSelection, computerSelection){
         (computerSelection === 'paper' && playerSelection === 'rock') ||
         (computerSelection === 'scissors' && playerSelection === 'paper')
     ){
-        result = "computer wins";
+        result = "computer wins this round as it chose " + computerSelection;
         computerPts++;
     }
     
