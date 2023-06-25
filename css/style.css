@@ -1,11 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
 
 body{
+    
     background-color: #050801;
     font-family: 'Raleway', sans-serif;
     color: aliceblue;
 }
 
+/* button design */
+
+#buttons{
+    display: flex;
+    justify-content:center;
+    margin:60px;
+    gap: 5px;
+    
+}
 .btn{
     padding: 25px 30px;
     background-color: #050801;
@@ -27,3 +37,42 @@ body{
                 0 0 200px #03e9f4;
      -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
 }
+/* scoreBoard */
+
+#scoreBoard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* round result */
+
+#roundResult{
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    margin-top: 25px;
+    margin-bottom: 35px;
+}
+/* contestants */
+
+#contestants{
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+    padding: 20px;
+    gap: 35px;
+
+}
+/* score */
+
+#score{
+    display: flex;
+    justify-content: center;
+    font-size: 200px;
+    gap: 160px;
+}
+/* resetGame */
+ #resetGame{
+    display: flex;
+    justify-content: center;
+ }
