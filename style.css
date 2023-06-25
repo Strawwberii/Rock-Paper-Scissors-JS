@@ -37,6 +37,7 @@ body{
                 0 0 200px #03e9f4;
      -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
 }
+
 /* scoreBoard */
 
 #scoreBoard{
@@ -53,6 +54,7 @@ body{
     margin-top: 25px;
     margin-bottom: 35px;
 }
+
 /* contestants */
 
 #contestants{
